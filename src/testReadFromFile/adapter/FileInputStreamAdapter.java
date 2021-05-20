@@ -7,9 +7,9 @@ import java.io.IOException;
 public class FileInputStreamAdapter implements IReadAdapter{
     private FileInputStream fileInputStream;
 
-    public FileInputStreamAdapter()  {
+    public FileInputStreamAdapter(String filePath)  {
         try {
-            this.fileInputStream = new FileInputStream("ReadMe");
+            this.fileInputStream = new FileInputStream(filePath);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

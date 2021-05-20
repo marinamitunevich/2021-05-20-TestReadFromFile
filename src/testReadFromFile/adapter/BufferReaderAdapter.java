@@ -8,9 +8,9 @@ import java.io.IOException;
 public class BufferReaderAdapter implements IReadAdapter {
     private BufferedReader bufferedReader;
 
-    public BufferReaderAdapter() {
+    public BufferReaderAdapter(String filePath) {
         try {
-            this.bufferedReader = new BufferedReader(new FileReader("ReadMe"));
+            this.bufferedReader = new BufferedReader(new FileReader(filePath));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

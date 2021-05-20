@@ -6,8 +6,9 @@ import testReadFromFile.adapter.IReadAdapter;
 
 public class TestRunning {
     public static void main(String[] args) {
-        IReadAdapter bufferReader = new BufferReaderAdapter();
-        IReadAdapter fileInputStream = new FileInputStreamAdapter();
+        String filePath = "ReadMe";
+        IReadAdapter bufferReader = new BufferReaderAdapter(filePath);
+        IReadAdapter fileInputStream = new FileInputStreamAdapter(filePath);
 
         Test test = new Test(bufferReader);
         System.out.println("Read file with BufferReader: "+test.test(500_000));
